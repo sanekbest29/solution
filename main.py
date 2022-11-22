@@ -4,17 +4,15 @@ from PyQt5.QtWidgets import QPushButton
 from PyQt5.QtGui import QPainter, QColor, QPolygon
 import sys
 import random
+from UI import Ui_MainWindow
 
 SCREEN_SIZE = [680, 480]
 
 
-class Example(QMainWindow):
+class Example(QMainWindow, Ui_MainWindow):
     def __init__(self):
         super().__init__()
         self.setupUi(self)
-        uic.loadUi('UI.ui', self)  # Загружаем дизайн
-        self.pushButton.clicked.connect(self.run)
-        # Обратите внимание: имя элемента такое же как в QTDesigner
         self.flag = False
         self.setWindowTitle('Супрематизм')
         self.pushButton.clicked.connect(self.draw)
